@@ -33,7 +33,7 @@ public class Specialite {
 	}
 	
 
-	public Specialite(String nom, Praticien praticien, List<Motif> motif) {
+	public Specialite(String nom) {
 		this.nom = nom;
 		this.praticien = praticien;
 		this.motif = motif;
