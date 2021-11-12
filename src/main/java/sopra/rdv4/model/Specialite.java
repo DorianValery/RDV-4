@@ -31,6 +31,13 @@ public class Specialite {
 		this.nom = nom;
 		this.praticien = praticien;
 	}
+	
+
+	public Specialite(String nom, Praticien praticien, List<Motif> motif) {
+		this.nom = nom;
+		this.praticien = praticien;
+		this.motif = motif;
+	}
 
 	public Long getId() {
 		return id;
