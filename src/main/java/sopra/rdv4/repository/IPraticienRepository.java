@@ -1,5 +1,9 @@
 package sopra.rdv4.repository;
 
-public interface IPraticienRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import sopra.rdv4.model.Praticien;
+
+public interface IPraticienRepository extends JpaRepository<Praticien, Long>  {
 
 }
