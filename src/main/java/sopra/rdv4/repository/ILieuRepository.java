@@ -9,7 +9,7 @@ import sopra.rdv4.model.Lieu;
 public interface ILieuRepository extends JpaRepository<Lieu, Long> {
 
 	//Afficher les praticiens par lieu de consultation
-	@Query("select idPraticien P from Lieu L  where P.id = :L.id")
-	Lieu findByLieuId(@Param("idPraticien") Long idPraticien); // par @Query
+//	@Query("select idPraticien P from Lieu L  where P.id = :L.id")
+//	Lieu findByLieuId(@Param("idPraticien") Long idPraticien); // par @Query
 
 }

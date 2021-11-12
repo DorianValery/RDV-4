@@ -17,7 +17,6 @@ import sopra.rdv4.model.Secteur;
 import sopra.rdv4.model.Specialite;
 import sopra.rdv4.model.Type;
 import sopra.rdv4.model.Utilisateur;
-import sopra.rdv4.repository.IAdresseRepository;
 import sopra.rdv4.repository.IConsultationRepository;
 import sopra.rdv4.repository.ICreneauRepository;
 import sopra.rdv4.repository.ILieuRepository;
@@ -41,7 +40,6 @@ public class TestJpa {
 		IPraticienRepository praticienRepo = spring.getBean(IPraticienRepository.class);
 		ISpecialiteRepository specialiteRepo = spring.getBean(ISpecialiteRepository.class);
 		IUtilisateurRepository utilisateurRepo = spring.getBean(IUtilisateurRepository.class);
-		IAdresseRepository adresseRepo = spring.getBean(IAdresseRepository.class);
 
 		
 		
@@ -99,7 +97,7 @@ public class TestJpa {
 		adresse.setVille("Paris");
 		adresse.setVoie("rue du Temple");
 		
-		adresse = adresseRepo.save(adresse);
+		//adresse = adresseRepo.save(adresse);
 		
 		Lieu lieu = new Lieu("Cabinet LaPorte","Sonnez avant d'entrée");
 		lieu = lieuRepo.save(lieu);
@@ -113,9 +111,38 @@ public class TestJpa {
 		Motif motif = new Motif("Fracture",2);
 		motif = motifRepo.save(motif);
 		
+		
+		
 		Consultation consultation = new Consultation();
 		consultation.setInstructions("Merci de vous munir d'un masque");
 		consultation = consultationRepo.save(consultation);
+		
+		motif.setSpecialite(specialite);
+		specialite.setPraticien(praticien);
+		creneau.setConsultation(consultation);
+		creneau.setLieu(lieu);
+		creneau.setPraticien(praticien);
+		lieu.setAdresse(adresse);
+		
+		lieu.setPraticien(praticien);
+		patient1.setAdresse(adresse);
+		patient1.setUtilisateur(comptePatient1);
+		praticien.setUtilisateur(comptePraticien);
+		
+		
+		
+		comptePraticien = utilisateurRepo.save(comptePraticien);
+		comptePatient1 = utilisateurRepo.save(comptePatient1);
+		praticien = praticienRepo.save(praticien);
+		patient1 = patientRepo.save(patient1);
+		lieu = lieuRepo.save(lieu);
+		creneau = creneauRepo.save(creneau);
+		specialite = specialiteRepo.save(specialite);
+		motif = motifRepo.save(motif);
+		consultation = consultationRepo.save(consultation);
+
+		
+		
 		
 		
 		spring.close();

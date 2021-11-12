@@ -68,6 +68,7 @@ public class Specialite {
 	public void setMotifs(List<Motif> motifs) {
 		this.motif = motifs;
 	}
+	
 
 	@Override
 	public String toString() {

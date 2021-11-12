@@ -10,6 +10,6 @@ import sopra.rdv4.model.Patient;
 public interface IPatientRepository extends JpaRepository<Patient, Long>  {
 
 	//Afficher les consultations par praticien
-	@Query("select id.Consultation from Consultation c where c.id = :idPraticien")
-	Consultation findByPraticienId(@Param("idPraticien") Long idPraticien); // par @Query
+//	@Query("select id.Consultation from Consultation c where c.id = :idPraticien")
+//	Consultation findByPraticienId(@Param("idPraticien") Long idPraticien); // par @Query
 }

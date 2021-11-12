@@ -203,6 +203,11 @@ public class Praticien {
 	public void setLieux(List<Lieu> lieux) {
 		this.lieux = lieux;
 	}
+	
+
+	public void setSpecialite(List<Specialite> specialite) {
+		this.specialite = specialite;
+	}
 
 	@Override
 	public String toString() {

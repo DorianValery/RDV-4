@@ -87,6 +87,31 @@ public class Utilisateur {
 	}
 
 
+	
+	public Praticien getPraticien() {
+		return praticien;
+	}
+
+
+
+	public void setPraticien(Praticien praticien) {
+		this.praticien = praticien;
+	}
+
+
+
+	public List<Patient> getPatient() {
+		return patient;
+	}
+
+
+
+	public void setPatient(List<Patient> patient) {
+		this.patient = patient;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Utilisateur [id=" + id + ", email=" + email + ", motDePasse=" + motDePasse + ", type=" + type + "]";

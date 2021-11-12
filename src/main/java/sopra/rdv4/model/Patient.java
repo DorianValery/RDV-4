@@ -123,6 +123,31 @@ public class Patient {
 		this.principal = principal;
 	}
 
+	
+	public List<Consultation> getConsultation() {
+		return consultation;
+	}
+
+	public void setConsultation(List<Consultation> consultation) {
+		this.consultation = consultation;
+	}
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
 	@Override
 	public String toString() {
 		return "Patient [id=" + id + ", civilite=" + civilite + ", nom=" + nom + ", prenom=" + prenom + ", telephone="
