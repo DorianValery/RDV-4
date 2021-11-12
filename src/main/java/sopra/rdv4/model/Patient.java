@@ -46,6 +46,18 @@ public class Patient {
 		this.email = email;
 		this.principal = principal;
 	}
+	
+	
+	public Patient(Civilite civilite, String nom, String prenom, String telephone, LocalDate dtNaissance, String email,
+			boolean principal) {
+		this.civilite = civilite;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.telephone = telephone;
+		this.dtNaissance = dtNaissance;
+		this.email = email;
+		this.principal = principal;
+	}
 
 	public Long getId() {
 		return id;

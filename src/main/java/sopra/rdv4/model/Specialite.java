@@ -25,18 +25,16 @@ public class Specialite {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Specialite(Long id, String nom, Praticien praticien) {
+	public Specialite(Long id, String nom) {
 		super();
 		this.id = id;
 		this.nom = nom;
-		this.praticien = praticien;
 	}
 	
 
 	public Specialite(String nom) {
 		this.nom = nom;
-		this.praticien = praticien;
-		this.motif = motif;
+		
 	}
 
 	public Long getId() {

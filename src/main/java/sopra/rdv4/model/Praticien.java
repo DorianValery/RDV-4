@@ -3,11 +3,16 @@ package sopra.rdv4.model;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 @Entity
 public class Praticien {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nom;
 	private String prenom;
@@ -52,6 +57,23 @@ public class Praticien {
 		this.specialite = specialite;
 		this.creneaux = creneaux;
 		this.lieux = lieux;
+	}
+	
+	
+	public Praticien(String nom, String prenom, Civilite civilite, String telephone, Secteur secteur,
+			Boolean carteVital, String photo, Boolean carteBancaire, Boolean cheque, Boolean espece,
+			Integer dureeCreneau) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.civilite = civilite;
+		this.telephone = telephone;
+		this.secteur = secteur;
+		this.carteVital = carteVital;
+		this.photo = photo;
+		this.carteBancaire = carteBancaire;
+		this.cheque = cheque;
+		this.espece = espece;
+		this.dureeCreneau = dureeCreneau;
 	}
 
 	public Long getId() {

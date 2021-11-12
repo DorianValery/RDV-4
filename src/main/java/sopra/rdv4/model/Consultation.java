@@ -20,19 +20,25 @@ public class Consultation {
 	@JoinColumn(name="motif_id")
 	private Motif motif;
 	@OneToMany (mappedBy = "consultation")
-	private List<Creneau> creneau;
+	private List<Creneau> creneaux;
 	@ManyToOne
 	@JoinColumn(name="patient_id")
 	private Patient patient;
 
 	public Consultation() {}
 
-	public Consultation(Long id, String instructions, Motif motif, List<Creneau> creneau, Patient patient) {
+	public Consultation(Long id, String instructions, Motif motif, List<Creneau> creneaux, Patient patient) {
 		this.id = id;
 		this.instructions = instructions;
 		this.motif = motif;
-		this.creneau = creneau;
+		this.creneaux = creneaux;
 		this.patient = patient;
+	}
+	
+	
+
+	public Consultation(String instructions) {
+		this.instructions = instructions;
 	}
 
 	public Long getId() {
@@ -56,7 +62,7 @@ public class Consultation {
 	}
 
 	public List<Creneau> getCreneau() {
-		return creneau;
+		return creneaux;
 	}
 
 	public Patient getPatient() {
@@ -67,8 +73,8 @@ public class Consultation {
 		this.motif = motif;
 	}
 
-	public void setCreneau(List<Creneau> creneau) {
-		this.creneau = creneau;
+	public void setCreneau(List<Creneau> creneaux) {
+		this.creneaux = creneaux;
 	}
 
 	public void setPatient(Patient patient) {
@@ -77,7 +83,7 @@ public class Consultation {
 
 	@Override
 	public String toString() {
-		return "Consultation [id=" + id + ", instructions=" + instructions + ", motif=" + motif + ", creneau=" + creneau
+		return "Consultation [id=" + id + ", instructions=" + instructions + ", motif=" + motif + ", creneau=" + creneaux
 				+ ", patient=" + patient + "]";
 	}
 
