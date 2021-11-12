@@ -1,7 +1,7 @@
 package sopra.rdv4.model;
 
 public enum Civilite {
-	M("Monsieur"), MME("Madame"), MLLE("Mademoiselle");
+	M("Monsieur"), MME("Madame"), NB("Non Binaire");
 
 	private final String label;
 

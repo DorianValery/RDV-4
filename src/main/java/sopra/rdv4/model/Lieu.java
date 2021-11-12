@@ -36,8 +36,6 @@ private Adresse adresse;
 		this.informations = informations;
 	}
 
-
-
 	public Lieu(Long id, String nom, String informations, Praticien praticien, List<Creneau> creneaux,
 			Adresse adresse) {
 		super();

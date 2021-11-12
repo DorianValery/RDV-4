@@ -33,7 +33,7 @@ public class Praticien {
 	
 	public Praticien(Long id, String nom, String prenom, Civilite civilite, String telephone, Secteur secteur,
 			Boolean carteVital, String photo, Boolean carteBancaire, Boolean cheque, Boolean espece,
-			Integer dureeCreneau, Utilisateur utilisateur, List<Specialite> specialites, List<Creneau> creneaux,
+			Integer dureeCreneau, Utilisateur utilisateur, List<Specialite> specialite, List<Creneau> creneaux,
 			List<Lieu> lieux) {
 		super();
 		this.id = id;

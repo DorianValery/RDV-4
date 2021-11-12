@@ -16,10 +16,10 @@ public class Motif {
  private Long id;
  private String nom;
  private int nbCreneau; 
- @OneToMany(mappedBy="")
+ @OneToMany(mappedBy="motif")
  private List<Consultation> consultation;
  @ManyToOne
- @JoinColumn(name="")
+ @JoinColumn(name="specialite_id")
  private Specialite specialite;
  
 	public Motif(Long id, String nom, int nbCreneau, List<Consultation> consultation, Specialite specialite) {

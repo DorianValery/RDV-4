@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
+
 @Entity
 public class Creneau {
 @Id
@@ -17,9 +17,9 @@ private Long id;
 private LocalDateTime debut;
 private Integer duree;
 private boolean dispo;
-//@ManyToOne
-//@JoinColumn(name="praticien_id")
-//private Praticien praticien;
+@ManyToOne
+@JoinColumn(name="praticien_id")
+private Praticien praticien;
 @ManyToOne
 @JoinColumn(name="lieu_id")
 private Lieu lieu;
@@ -36,7 +36,7 @@ private Consultation consultation;
 		this.debut = debut;
 		this.duree = duree;
 		this.dispo = dispo;
-		//this.praticien = praticien;
+		this.praticien = praticien;
 		this.lieu = lieu;
 		this.consultation = consultation;
 	}
@@ -80,9 +80,9 @@ private Consultation consultation;
 		this.dispo = dispo;
 	}
 	
-	/*public Praticien getPraticien() {
+	public Praticien getPraticien() {
 		return praticien;
-	}*/
+	}
 
 
 	public Lieu getLieu() {
@@ -95,9 +95,9 @@ private Consultation consultation;
 	}
 
 
-	/*public void setPraticien(Praticien praticien) {
+	public void setPraticien(Praticien praticien) {
 		this.praticien = praticien;
-	}*/
+	}
 
 
 	public void setLieu(Lieu lieu) {

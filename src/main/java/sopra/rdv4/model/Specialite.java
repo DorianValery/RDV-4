@@ -18,19 +18,18 @@ public class Specialite {
 	@ManyToOne
 	@JoinColumn(name="praticien_id")
 	private Praticien praticien;
-	@OneToMany(mappedBy="specialites")
+	@OneToMany(mappedBy="specialite")
 	private List<Motif> motif;
 	
 	public Specialite() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Specialite(Long id, String nom, Praticien praticien, List<Motif> motifs) {
+	public Specialite(Long id, String nom, Praticien praticien) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.praticien = praticien;
-		this.motif = motif;
 	}
 
 	public Long getId() {
