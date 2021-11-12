@@ -102,7 +102,7 @@ public class TestJpa {
 		adresse = adresseRepo.save(adresse);
 		
 		Lieu lieu = new Lieu("Cabinet LaPorte","Sonnez avant d'entrée");
-		lieu = adresseRepo.save(lieu);
+		lieu = lieuRepo.save(lieu);
 		
 		Creneau creneau = new Creneau(LocalDateTime.parse("2021-05-05T10:30:00"),15,true);
 		creneau = creneauRepo.save(creneau);
@@ -111,7 +111,7 @@ public class TestJpa {
 		specialite = specialiteRepo.save(specialite);
 		
 		Motif motif = new Motif("Fracture",2);
-		motif = motifRepo.save(specialite);
+		motif = motifRepo.save(motif);
 		
 		Consultation consultation = new Consultation();
 		consultation.setInstructions("Merci de vous munir d'un masque");
