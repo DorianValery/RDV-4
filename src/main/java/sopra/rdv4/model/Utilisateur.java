@@ -1,5 +1,7 @@
 package sopra.rdv4.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +19,7 @@ public class Utilisateur {
 	@OneToOne(mappedBy="utilisateur") 
 	private Praticien praticien;
 	@OneToMany(mappedBy="utilisateur")
-	private Patient patient;
+	private List<Patient> patient;
 	
 	public Utilisateur() {
 		// TODO Auto-generated constructor stub
