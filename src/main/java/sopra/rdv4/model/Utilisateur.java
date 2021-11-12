@@ -1,12 +1,23 @@
 package sopra.rdv4.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+@Entity
 public class Utilisateur {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String email;
 	private String motDePasse;
 	private Type type;
-	
+	@OneToOne 
+	private Praticien praticien;
+	@OneToMany(mappedBy="utilisateur")
+	private Patient patient;
 	
 	public Utilisateur() {
 		// TODO Auto-generated constructor stub
