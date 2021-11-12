@@ -18,8 +18,8 @@ public class Specialite {
 	@ManyToOne
 	@JoinColumn(name="praticien_id")
 	private Praticien praticien;
-	@OneToMany(mappedBy="specialite")
-	private List<Motif> motifs;
+	@OneToMany(mappedBy="specialites")
+	private List<Motif> motif;
 	
 	public Specialite() {
 		// TODO Auto-generated constructor stub
@@ -30,12 +30,7 @@ public class Specialite {
 		this.id = id;
 		this.nom = nom;
 		this.praticien = praticien;
-		this.motifs = motifs;
-	}
-	
-
-	public Specialite(String nom) {
-		this.nom = nom;
+		this.motif = motif;
 	}
 
 	public Long getId() {
@@ -59,7 +54,7 @@ public class Specialite {
 	}
 
 	public List<Motif> getMotifs() {
-		return motifs;
+		return motif;
 	}
 
 	public void setPraticien(Praticien praticien) {
@@ -67,12 +62,12 @@ public class Specialite {
 	}
 
 	public void setMotifs(List<Motif> motifs) {
-		this.motifs = motifs;
+		this.motif = motifs;
 	}
 
 	@Override
 	public String toString() {
-		return "Specialite [id=" + id + ", nom=" + nom + ", motifs=" + motifs + "]";
+		return "Specialite [id=" + id + ", nom=" + nom + ", motifs=" + motif + "]";
 	}
 		
 	

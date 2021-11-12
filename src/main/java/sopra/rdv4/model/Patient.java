@@ -25,12 +25,12 @@ public class Patient {
 	private String email;
 	private boolean principal;
 	@OneToMany(mappedBy="patient")
-	private List<Consultation> consultations;
+	private List<Consultation> consultation;
 	@Embedded
 	private Adresse adresse;
 	@ManyToOne
 	@JoinColumn(name="utilisateurs_id")
-	private Utilisateur utilisateurs;
+	private Utilisateur utilisateur;
 	
 	public Patient() {}
 

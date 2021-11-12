@@ -23,7 +23,7 @@ public class Praticien {
 	@OneToOne
 	private Utilisateur utilisateur;
 	@OneToMany(mappedBy="praticien")
-	private List<Specialite> specialites;
+	private List<Specialite> specialite;
 	@OneToMany(mappedBy="praticien")
 	private List<Creneau>creneaux;
 	@OneToMany(mappedBy="praticien")
@@ -49,12 +49,10 @@ public class Praticien {
 		this.espece = espece;
 		this.dureeCreneau = dureeCreneau;
 		this.utilisateur = utilisateur;
-		this.specialites = specialites;
+		this.specialite = specialite;
 		this.creneaux = creneaux;
 		this.lieux = lieux;
 	}
-
-
 
 	public Long getId() {
 		return id;
@@ -156,8 +154,8 @@ public class Praticien {
 		return utilisateur;
 	}
 
-	public List<Specialite> getSpecialites() {
-		return specialites;
+	public List<Specialite> getSpecialite() {
+		return specialite;
 	}
 
 	public List<Creneau> getCreneaux() {
@@ -172,8 +170,8 @@ public class Praticien {
 		this.utilisateur = utilisateur;
 	}
 
-	public void setSpecialites(List<Specialite> specialites) {
-		this.specialites = specialites;
+	public void setSpecialites(List<Specialite> specialite) {
+		this.specialite = specialite;
 	}
 
 	public void setCreneaux(List<Creneau> creneaux) {
@@ -189,7 +187,7 @@ public class Praticien {
 		return "Praticien [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", civilite=" + civilite + ", telephone="
 				+ telephone + ", secteur=" + secteur + ", carteVital=" + carteVital + ", photo=" + photo
 				+ ", carteBancaire=" + carteBancaire + ", cheque=" + cheque + ", espece=" + espece + ", dureeCreneau="
-				+ dureeCreneau + ", utilisateur=" + utilisateur + ", specialites=" + specialites + ", creneaux="
+				+ dureeCreneau + ", utilisateur=" + utilisateur + ", specialite=" + specialite + ", creneaux="
 				+ creneaux + ", lieux=" + lieux + "]";
 	}
 
