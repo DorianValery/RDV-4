@@ -1,9 +1,21 @@
 package sopra.rdv4.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Patient {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Civilite civilite;
 	private String nom;
@@ -12,6 +24,13 @@ public class Patient {
 	private LocalDate dtNaissance;
 	private String email;
 	private boolean principal;
+	@OneToMany(mappedBy="patient")
+	private List<Consultation> consultations;
+	@Embedded
+	private Adresse adresse;
+	@ManyToOne
+	@JoinColumn(name="utilisateurs_id")
+	private Utilisateur utilisateurs;
 	
 	public Patient() {}
 

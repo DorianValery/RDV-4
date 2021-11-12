@@ -1,11 +1,20 @@
 package sopra.rdv4.model;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Adresse {
+	@Column(name="voie", length = 255)
 	private String voie;
+	@Column(name="complement", length = 255)
 	private String complement;
+	@Column(name="codePostal", length = 255)
 	private String codePostal;
+	@Column(name="ville", length = 255)
 	private String ville;
 	
+
 	public Adresse() {}
 
 	public Adresse(String voie, String complement, String codePostal, String ville) {
