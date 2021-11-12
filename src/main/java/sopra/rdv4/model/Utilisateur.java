@@ -19,7 +19,11 @@ public class Utilisateur {
 	@OneToOne(mappedBy="utilisateur") 
 	private Praticien praticien;
 	@OneToMany(mappedBy="utilisateur")
+<<<<<<< HEAD
 	private List <Patient> patient;
+=======
+	private List<Patient> patient;
+>>>>>>> master
 	
 	public Utilisateur() {
 		// TODO Auto-generated constructor stub
