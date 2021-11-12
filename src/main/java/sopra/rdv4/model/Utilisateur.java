@@ -14,7 +14,7 @@ public class Utilisateur {
 	private String email;
 	private String motDePasse;
 	private Type type;
-	@OneToOne 
+	@OneToOne(mappedBy="utilisateur") 
 	private Praticien praticien;
 	@OneToMany(mappedBy="utilisateur")
 	private Patient patient;

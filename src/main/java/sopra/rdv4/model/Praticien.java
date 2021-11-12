@@ -1,5 +1,11 @@
 package sopra.rdv4.model;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+@Entity
 public class Praticien {
 
 	private Long id;
@@ -14,16 +20,22 @@ public class Praticien {
 	private Boolean cheque;
 	private Boolean espece;
 	private Integer dureeCreneau;
+	@OneToOne
+	private Utilisateur utilisateur;
+	@OneToMany(mappedBy="praticien")
+	private List<Specialite> specialites;
+	@OneToMany(mappedBy="praticien")
+	private List<Creneau>creneaux;
+	@OneToMany(mappedBy="praticien")
+	private List<Lieu> lieux;
 	
-	
-	public Praticien()
-	{
-		
-	}
+	public Praticien(){}
 	
 	public Praticien(Long id, String nom, String prenom, Civilite civilite, String telephone, Secteur secteur,
 			Boolean carteVital, String photo, Boolean carteBancaire, Boolean cheque, Boolean espece,
-			Integer dureeCreneau) {
+			Integer dureeCreneau, Utilisateur utilisateur, List<Specialite> specialites, List<Creneau> creneaux,
+			List<Lieu> lieux) {
+		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -36,7 +48,13 @@ public class Praticien {
 		this.cheque = cheque;
 		this.espece = espece;
 		this.dureeCreneau = dureeCreneau;
+		this.utilisateur = utilisateur;
+		this.specialites = specialites;
+		this.creneaux = creneaux;
+		this.lieux = lieux;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -134,13 +152,45 @@ public class Praticien {
 		this.dureeCreneau = dureeCreneau;
 	}
 
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	public List<Specialite> getSpecialites() {
+		return specialites;
+	}
+
+	public List<Creneau> getCreneaux() {
+		return creneaux;
+	}
+
+	public List<Lieu> getLieux() {
+		return lieux;
+	}
+
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
+	}
+
+	public void setSpecialites(List<Specialite> specialites) {
+		this.specialites = specialites;
+	}
+
+	public void setCreneaux(List<Creneau> creneaux) {
+		this.creneaux = creneaux;
+	}
+
+	public void setLieux(List<Lieu> lieux) {
+		this.lieux = lieux;
+	}
+
 	@Override
 	public String toString() {
 		return "Praticien [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", civilite=" + civilite + ", telephone="
 				+ telephone + ", secteur=" + secteur + ", carteVital=" + carteVital + ", photo=" + photo
 				+ ", carteBancaire=" + carteBancaire + ", cheque=" + cheque + ", espece=" + espece + ", dureeCreneau="
-				+ dureeCreneau + "]";
+				+ dureeCreneau + ", utilisateur=" + utilisateur + ", specialites=" + specialites + ", creneaux="
+				+ creneaux + ", lieux=" + lieux + "]";
 	}
-	
-	
+
 }
