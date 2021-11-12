@@ -40,6 +40,13 @@ private Consultation consultation;
 		this.lieu = lieu;
 		this.consultation = consultation;
 	}
+	
+
+	public Creneau(LocalDateTime debut, Integer duree, boolean dispo) {
+		this.debut = debut;
+		this.duree = duree;
+		this.dispo = dispo;
+	}
 
 	public Long getId() {
 		return id;

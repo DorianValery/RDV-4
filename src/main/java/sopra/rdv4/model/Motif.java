@@ -33,6 +33,19 @@ public class Motif {
 
 	public Motif() {}
 
+	public Motif(Long id, String nom, int nbCreneau) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.nbCreneau = nbCreneau;
+	}
+	
+
+	public Motif(String nom, int nbCreneau) {
+		this.nom = nom;
+		this.nbCreneau = nbCreneau;
+	}
+
 	public Long getId() {
 		return id;
 	}

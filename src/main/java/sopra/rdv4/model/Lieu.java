@@ -28,6 +28,15 @@ private List<Creneau>creneaux;
 private Adresse adresse;
 
 	public Lieu() {}
+	
+	
+
+	public Lieu(String nom, String informations) {
+		this.nom = nom;
+		this.informations = informations;
+	}
+
+
 
 	public Lieu(Long id, String nom, String informations, Praticien praticien, List<Creneau> creneaux,
 			Adresse adresse) {
